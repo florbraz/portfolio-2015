@@ -1,0 +1,11 @@
+%hide-mobile {
+	@media #{$Mobile} {
+		display:none!important; 
+	}		
+}
+
+%only-mobile {
+	@media #{$NotMobile} {
+		display:none!important; 
+	}		
+} 

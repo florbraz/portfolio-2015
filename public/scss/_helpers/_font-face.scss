@@ -1,0 +1,32 @@
+@include font-face(
+  "Enzo-Medium",
+  font-files(
+    'EnzoOT-Medi.woff', woff,
+    'EnzoOT-Medi.ttf', ttf,
+    'EnzoOT-Medi.svg', svg),
+    'EnzoOT-Medi.eot',
+  normal, // font-weight
+  normal  // font-style
+);
+
+@include font-face(
+  "Enzo-Light",
+  font-files(
+    'EnzoOT-Light.woff', woff,
+    'EnzoOT-Light.ttf', ttf,
+    'EnzoOT-Light.svg', svg),
+    'EnzoOT-Light.eot',
+  normal, // font-weight
+  normal  // font-style
+);
+
+@include font-face(
+  "Enzo-Bold",
+  font-files(
+    'EnzoOT-Bold.woff', woff,
+    'EnzoOT-Bold.ttf', ttf,
+    'EnzoOT-Bold.svg', svg),
+    'EnzoOT-Bold.eot',
+  normal, // font-weight
+  normal  // font-style
+);

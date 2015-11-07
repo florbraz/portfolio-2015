@@ -1,0 +1,50 @@
+// import gridle
+@import "gridle/gridle";
+
+// setting up the grid
+@include gridle_setup( (
+	context : 12,
+	gutter-width : $gutter-width,
+	direction:ltr
+	// etc...
+) );
+
+@include gridle_register_state ( all , (
+	query : "screen",
+	//gutter-width : 10px
+) );
+
+@include gridle_register_state ( mobile , (
+	query : "screen and (max-width:767px)",
+	//gutter-width : 10px
+) );
+
+@include gridle_register_state ( mobilePortrait , (
+	query : "screen and (max-width:400px)",
+	//gutter-width : 10px
+));
+
+@include gridle_register_state ( mobileLandscape , (
+	query : "screen and (min-width:401px) and (max-width:767px)",
+	//gutter-width : 10px
+) );
+
+@include gridle_register_state ( tablet , (
+	query : "screen and (min-width:768px) and (max-width:1219px)",
+	//gutter-width : 10px
+));
+
+@include gridle_register_state ( tabletPortrait , (
+	query : "screen and (min-width:768px) and (max-width:979px)",
+	//gutter-width : 10px
+));
+
+@include gridle_register_state ( tabletLandscape , (
+	query : "screen and (min-width:980px) and (max-width:1219px)",
+	//gutter-width : 10px
+));
+
+@include gridle_register_state ( desktop , (
+	query : "screen and (min-width:1220px)",
+	//gutter-width : 10px
+) );
