@@ -14,16 +14,17 @@ require(
     [
         'jquery', 
         'app/main', 
-        'app/home'
+        'app/home',
+        'app/navigation'
     ],
     
     function ($) {
         
         var App = require('app/main');
-        
+        var Navigation = require('app/navigation');
         var Home = require('app/home');
         
-        $.extend(App, Home);
+        $.extend(App, Navigation, Home);
         
         
         // for (var key in App) {
@@ -51,7 +52,7 @@ require(
         //     App.Resize();
         // });  
         
-        console.log(App);
+        App.Navigation.Init();        
     
     }
 );

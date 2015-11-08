@@ -5,6 +5,12 @@
 * V1.1.0
 */
 
+@mixin icon($content) {
+    font-family:"icons";
+    content:$content;
+    font-size:16px;
+}
+
 @mixin noise() {
     position: absolute;
     left:0;

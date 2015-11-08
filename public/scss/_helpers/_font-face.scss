@@ -30,3 +30,14 @@
   normal, // font-weight
   normal  // font-style
 );
+
+@include font-face(
+  "icons",
+  font-files(
+    'icomoon.woff', woff,
+    'icomoon.ttf', ttf,
+    'icomoon.svg', svg),
+    'icomoon.eot',
+  normal, // font-weight
+  normal  // font-style
+);

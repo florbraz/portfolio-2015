@@ -1,0 +1,143 @@
+$header-background: $purple;
+$header-color: $white;
+
+header {
+    background:$header-background;
+    color:$header-color;
+    position:fixed;
+    width:100%;
+    z-index: 50;
+    padding-bottom:20px;
+    &:after {
+        width:100%;
+        height:50vh;
+        background: linear-gradient(to bottom, $purple 0%,rgba($purple,0) 100%); /* W3C */
+        position:fixed;
+        top:74px;
+        content:"";
+        pointer-events: none;
+    }
+    &.fixed-header {
+        padding-bottom:0;
+        &:after {
+            display:none;
+        }
+    }
+    a {
+        color:$header-color;
+        text-decoration:none;
+        position:relative;
+        transition:all 0.5s;
+        &:hover {
+            color:tint($header-background, 60%);
+        }
+    }
+    ul {
+        margin:0;
+        padding:0;
+    }
+    li {
+        display:inline-block;
+    }
+    .inner {
+        width:100%;
+        display:table;
+    }
+}
+
+.logo,
+.nav,
+.social {
+    display:table-cell;
+    width:25%;
+    text-align:center;
+    vertical-align:middle;
+}
+
+@media #{$Desktop} {
+    .logo,
+    .social {
+        transform: translate(0, -55px);
+        transition: all 1s;
+        opacity:0;
+        .fixed-header & {
+            transform: translate(0, 0);
+            opacity:1;
+        }
+    }    
+}
+
+.logo {
+    a {
+        font-size:28px;
+        &:hover {
+            color:tint($header-background, 40%);
+        }
+        strong {
+            font-family:$f-bold; 
+        }
+    }
+}
+
+.nav {
+    width:50%;
+    a {
+        padding:25px;
+        display:block;
+        &:after {
+            content:"";
+            display:block;
+            position:absolute;
+            bottom:0;
+            left:0;
+            width:100%;
+            background:$header-background;
+            height:4px;
+            transition:all 0.5s;
+        }
+        &:hover {
+            &:after {
+                background:tint($header-background, 40%);
+            }
+        }
+    }
+    .active a {
+        &:after {
+            background:$header-color;
+        }
+    } 
+}
+
+.social {
+    a {
+        font-size:0;
+        margin: 0 8px;
+        &:after {
+            padding:0.5em;
+            line-height:1;
+            border:1px solid $header-color;
+            border-radius:50%;
+            transition:all 0.5s;
+        }
+        &:hover:after {
+            border-color:tint($header-background, 40%);
+            color:tint($header-background, 40%);
+            
+        }
+    }
+    .social-twitter {
+        a:after {
+            @include icon('\e900');
+        }
+    }
+    .social-github {
+        a:after {
+            @include icon('\e901');
+        }
+    }
+    .social-linkedin {
+        a:after {
+            @include icon('\e903');
+        }
+    }
+}

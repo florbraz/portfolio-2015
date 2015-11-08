@@ -1,10 +1,8 @@
-$theme-color: "yellow";// yellow or red
-
 // colors
 
 $red: #b52207;
 $yellow: #f5f5e3; 
-$purple: #66336a;
+$purple: #3f1835;
 $white: #fff;
 $dark-blue:#373950;
 $green: #addb00;
@@ -12,7 +10,7 @@ $light-gray: #e0e0e8;
 $lighter-gray:#f4f4f4;
 $gray:#999;
 $dark-gray:#3f4047;
-$black:#232b2f;
+$black:#000;
 
 $main-color:$dark-blue;
 $main-highlight:$green;
@@ -35,7 +33,7 @@ $mobile-font-size: 14px;
 // font names
 $f-light: 'Enzo-Light', "Calibri Light", Calibri, sans-serif;
 $f-regular: 'Enzo-Medium', "Calibri Regular", Calibri, sans-serif;
-$f-medium:  'Enzo-Bold', "Calibri Bold", Calibri, sans-serif;
+$f-bold:  'Enzo-Bold', "Calibri Bold", Calibri, sans-serif;
 
 $default-font: $f-light;
 

@@ -4,7 +4,7 @@ define(function() {
     var App = {
         Utils : {
             IsOnPage: function(elem) {
-            var $elem = $(elem);
+                var $elem = $(elem);
                 if ($elem.length) {
                         var $window = $(window);
                     
@@ -14,7 +14,7 @@ define(function() {
                         var elemTop = $elem.offset().top;
                         var elemBottom = elemTop + $elem.height();
                     
-                        return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));      
+                        return ((elemBottom <= docViewBottom) && (elemTop + ($elem.height()/2) >= docViewTop));      
                 }
             },
             WindowWidth: function() {

@@ -1,9 +1,15 @@
+* {
+    box-sizing:border-box;
+}
+
 html,
 body,
 input,
 select,
 button {
     font-family:$default-font;
+    line-height:$default-line-height;
+    letter-spacing:$default-letter-spacing;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -12,10 +18,33 @@ h1, h2, h3, h4, h5, h6 {
 
 strong {
     font-weight:normal;
-    font-family:$f-regular;
+    font-family:$f-bold;
 }
 
 img {
     display:block;
     max-width:100%;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.banner {
+    font-size:0;
+    text-align:center;
+    .banner-content,
+    .banner-background {
+        display:inline-block;
+        vertical-align: middle;
+        width:100%;
+        font-size:16px;
+        &:first-child {
+            margin-right:-100%;
+        }
+    }
+    .banner-content {
+        position:relative;
+        z-index:10;
+    }
 }

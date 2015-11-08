@@ -1,6 +1,6 @@
 define(["app/main"], function(main) {
     
-    var App = require(main);
+    var App = require('app/main');
     
     App.Home = {
         Init:function() {

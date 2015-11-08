@@ -35,7 +35,7 @@
 	<meta name="author" content="Flor Braz" />
 	<link rel="author" href="http://plus.google.com/117421466259959922828" />
 	
-    <meta name="theme-color" content="#f5f5e3" />
+    <meta name="theme-color" content="#3f1835" />
     
 	<link rel="shortcut icon" href="img/favicon.png" />
 	<link rel="icon" sizes="192x192" href="img/favicon-high.png">
@@ -50,23 +50,59 @@
 
 </head>
 <body>
+    <header role="banner">
+        <div class="container">
+            <div class="inner">
+                <div class="logo">
+                    <a href="">
+                        Flor<strong>Braz</strong>
+                    </a>
+                </div>
+                <nav class="nav" role="navigation">
+                    <ul>
+                        <li class="active">
+                            <a href="">Blog</a>
+                        </li>
+                        <li>
+                            <a href="">Latest work</a>
+                        </li>
+                        <li>
+                            <a href="">About me</a>
+                        </li>
+                        <li>
+                            <a href="">Get in touch</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="social">
+                    <ul>
+                        <li class="social-twitter">
+                            <a href="">Twitter</a>
+                        </li>
+                        <li class="social-github">
+                            <a href="">GitHub</a>
+                        </li>
+                        <li class="social-linkedin">
+                            <a href="">LinkedIn</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>  
+    </header>
 	<main role="main">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="contained-inside-image">
-                    <div class="page-header panel panel-default text-center">
-                        <h1>Hi, my name is <span class="nowrap">Flor Braz</span>. <br />
-                            <small>I’m a <strong>Front-end Developer</strong> based in Brazil. <br />
-                                <small>(with a pinch of designer skills)</small>
-                            </small>
+        <div class="banner">
+                <div class="banner-content">
+                    <div class="inner">
+                        <h1>Hi, my name is <strong class="nowrap">Flor Braz</strong>. <br />
+                            <small>I’m an <strong class="nowrap">UX designer</strong> and <strong class="nowrap">Front-end Developer</strong> based in Brazil. </small>
                         </h1>
-                        <button type="button" class="btn btn-default btn-lg btn-round"><span class="glyphicon glyphicon-star"></span></button>
-                        <button type="button" class="btn btn-default btn-lg btn-round"><span class="glyphicon glyphicon-tint"></span></button>
-                        <a class="btn btn-default btn-lg btn-round" href="http://plus.google.com/117421466259959922828" rel="author"><span class="glyphicon glyphicon-picture"></span></a>
                     </div>
                 </div>
-                <div class="banner">
-                    <img src="img/banner-clover.jpg" />
+                <div class="banner-background">
+                    <div class="inner">
+                        
+                    </div>
                 </div>
             </div>
             <div class="container works" ng-controller="WorksCtrlr">
