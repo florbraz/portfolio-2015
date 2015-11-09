@@ -8,7 +8,6 @@
 @mixin icon($content) {
     font-family:"icons";
     content:$content;
-    font-size:16px;
 }
 
 @mixin noise() {

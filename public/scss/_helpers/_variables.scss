@@ -1,34 +1,38 @@
 // colors
 
-$red: #b52207;
+$orange: #e4650e;
 $yellow: #f5f5e3; 
 $purple: #3f1835;
 $white: #fff;
 $dark-blue:#373950;
+$gray-blue: #3D3E4E;
 $green: #addb00;
 $light-gray: #e0e0e8;
 $lighter-gray:#f4f4f4;
 $gray:#999;
-$dark-gray:#3f4047;
+$dark-gray:#222;
 $black:#000;
 
-$main-color:$dark-blue;
-$main-highlight:$green;
-
-$brand-color: $black;
+$main-color:$gray-blue;
+$main-highlight:$orange;
 
 $bg-body:$white;
+
+$header-background: $gray-blue;
+$header-color: $white;
+
+$button-color: $gray-blue;
 
 // sizes
 $max-desktop-container-width:1372px;
 $default-spacing: 30px;
-$gutter-width: 10px;
+$gutter-width: 30px;
 
 // font-sizes
 $large-font-size: 40px;
 $large-font-size-mobile: 30px;
-$default-font-size: 18px;
-$mobile-font-size: 14px;
+$default-font-size: 22px;
+$mobile-font-size: 18px;
 
 // font names
 $f-light: 'Enzo-Light', "Calibri Light", Calibri, sans-serif;
@@ -40,7 +44,7 @@ $default-font: $f-light;
 // etc
 
 $border: 1px solid $lighter-gray; 
-$default-letter-spacing: 0em;
+$default-letter-spacing: 0.05em;
 $default-line-height:1.56;
 
 $Mobile : "all and (max-width:767px)";

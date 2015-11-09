@@ -10,6 +10,15 @@ button {
     font-family:$default-font;
     line-height:$default-line-height;
     letter-spacing:$default-letter-spacing;
+    color:$gray-blue;
+    font-size:$default-font-size;
+    @media #{$Mobile} {
+        font-size:$mobile-font-size;    
+    }
+}
+
+a {
+    color:$orange;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -26,8 +35,90 @@ img {
     max-width:100%;
 }
 
+p {
+    margin: 0 0 1.2em;
+    &:last-child {
+        margin-bottom:0;
+    }
+}
+
 .nowrap {
   white-space: nowrap;
+}
+
+.row {
+    @extend %clearfix;
+    margin:0 (-($gutter-width/2));
+}
+
+.container {
+    @extend %col-16;
+    @extend %clearfix;
+    max-width:$max-desktop-container-width;
+    margin:0 auto;
+    float:none;
+    display: block;
+}
+
+.col-sm-2 {
+    @extend %col-2;
+}
+
+.col-sm-3 {
+    @extend %col-3;
+}
+
+.col-sm-4 {
+    @extend %col-4;
+    @media #{$Mobile} {
+        width:100%;
+        float:none;
+        display:block;
+    }
+}
+.col-sm-16 {
+    @extend %col-16;
+}
+
+$button-color: $main-highlight;
+.btn {
+	border: 0;
+    font-family: $f-regular;
+    font-size: 19px;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    padding: 1em 2.5em;
+    display: inline-block;
+    margin: 2.5em 1em;
+    outline: none;
+    position: relative;
+	background:$button-color;
+    color:$white;
+    box-shadow: 0 6px darken($button-color, 5%);
+    text-decoration:none;
+    text-align:center;
+    border-radius:2.5em;
+	&:hover {
+		box-shadow: 0 4px darken($button-color, 5%);
+    	top: 2px;
+        text-decoration:none;
+	}
+	&:active,
+    &.active {
+		box-shadow: 0 0 darken($button-color, 5%);
+    	top: 6px;
+	}
+    &:first-child {
+        margin-left:0;
+    }
+    &:last-child {
+        margin-right:0;
+    }
+    em {
+        font-style:normal;
+        border-bottom:1px solid $white;
+    }
 }
 
 .banner {
@@ -47,4 +138,8 @@ img {
         position:relative;
         z-index:10;
     }
+}
+
+.actions {
+    text-align: center;
 }

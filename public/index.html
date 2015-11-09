@@ -35,7 +35,7 @@
 	<meta name="author" content="Flor Braz" />
 	<link rel="author" href="http://plus.google.com/117421466259959922828" />
 	
-    <meta name="theme-color" content="#3f1835" />
+    <meta name="theme-color" content="#3D3E4E" />
     
 	<link rel="shortcut icon" href="img/favicon.png" />
 	<link rel="icon" sizes="192x192" href="img/favicon-high.png">
@@ -60,14 +60,14 @@
                 </div>
                 <nav class="nav" role="navigation">
                     <ul>
+                        <li>
+                            <a href="">About me</a>
+                        </li>
                         <li class="active">
                             <a href="">Blog</a>
                         </li>
                         <li>
                             <a href="">Latest work</a>
-                        </li>
-                        <li>
-                            <a href="">About me</a>
                         </li>
                         <li>
                             <a href="">Get in touch</a>
@@ -92,63 +92,77 @@
     </header>
 	<main role="main">
         <div class="banner">
-                <div class="banner-content">
-                    <div class="inner">
-                        <h1>Hi, my name is <strong class="nowrap">Flor Braz</strong>. <br />
-                            <small>I’m an <strong class="nowrap">UX designer</strong> and <strong class="nowrap">Front-end Developer</strong> based in Brazil. </small>
-                        </h1>
-                    </div>
-                </div>
-                <div class="banner-background">
-                    <div class="inner">
-                        
-                    </div>
+            <div class="banner-content">
+                <div class="inner">
+                    <h1>Hi, my name is <strong class="nowrap">Flor Braz</strong>. <br />
+                        <small>I’m an <strong class="nowrap">UX designer</strong> and <strong class="nowrap">Front-end Developer</strong> based in Brazil. </small>
+                    </h1>
                 </div>
             </div>
-            <div class="container works" ng-controller="WorksCtrlr">
-                <h2 class="section-title"><span>Latest Work</span></h2>
-                <h3 class="section-small">(*some of those works were made under a confidentiality agreement, so I can’t reveal the identity of the clients involved)</h3>
-                <div class="row">
-                    <div class="col-sm-4" ng-repeat="work in works">
-                        <div class="thumbnail">
-                        <div class="thumb-bg"><span class="thumb-inner"><img src="img/logo-confidential.png" ng-src="{{work.field_image.url}}" width="190" alt="..."></span></div>
-                        <div class="caption">
-                            <h3>{{work.title}}</h3>
-                            <p><strong>What I did:</strong></p>
-                            <div ng-bind-html="work.field_what_i_did.value"></div>
-                            <p><strong>Based in:</strong></p>
-                            <div ng-bind-html="work.field_based_in.value"></div>
-                            <p><strong>Support:</strong> </p>
-                            <div ng-bind-html="work.field_support.value"></div>
-                        </div>
-                        </div>
-                    </div>
+            <div class="banner-background">
+                <div class="inner">
+                    
                 </div>
             </div>
-            <div class="container about-me">
-                <h2 class="section-title"><span>About me</span></h2>
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div class="story">
-                            <p>Hi, my name is <strong>Flor Braz</strong> and I'm a front-end developer based in Brazil. </p>
-                            <p> I've been working on front-end development for 8 years now, having supported IE6, IE7, and slow connections/PCs. Nowadays the web has never-ending possibilities and I'm willing to explore them all. </p>
-                            <p>I've also worked as Web/UX designer. This allows me to have a better understanding of the layouts I code and I’m often able to advise the creatives in what would be the best approach in a certain page or type of business. </p>
-                        </div>
+        </div>
+        <div class="container about-me">
+            <img src="img/placeholder-skills.jpg" alt="">
+            <div class="row">
+                <div class="col-sm-3">
+                    <span class="circle circle-outer">
+                    </span>
+                </div>
+                <div class="col-sm-3">
+                    <span class="circle">
+                    </span>
+                </div>
+                <div class="col-sm-4">
+                    <div class="me">
+                        <span class="img-wrapper">
+                            <img src="img/flor-braz.jpg" width="309" alt="Photo of the front-end developer Flor Braz" title="Flor Braz - Front-end Developer"/> 
+                        </span>
                     </div>
-                    <div class="col-sm-4">
-                        <div class="me">
-                            <span class="img-wrapper">
-                                <img src="img/flor-braz.jpg" width="309" alt="Photo of the front-end developer Flor Braz" title="Flor Braz - Front-end Developer"/> 
-                            </span>
-                            <a class="btn btn-default" href="http://plus.google.com/117421466259959922828" rel="author">view my resume (CV)</a>
-                        </div>
+                </div>
+                <div class="col-sm-3">
+                    <span class="circle">
+                    </span>
+                </div>
+                <div class="col-sm-3">
+                    <span class="circle circle-outer">
+                    </span>
+                </div>	
+            </div>
+            <div class="row">
+                <div class="col-sm-16">
+                    <h2 class="section-title"><span>About me</span></h2>
+                    <div class="story">
+                        <p>Hi, my name is <strong>Flor Braz</strong> and I'm an <strong class="nowrap">UX designer</strong> and <strong class="nowrap">Front-end Developer</strong> based in Brazil. </p>
+                        <p> I've been working in this area for 8 years now, dealing with IE6, IE7, and slow connections/PCs. Nowadays the web has never-ending possibilities and I'm willing to explore them all. My knowledge in UX design allows me to have a better understanding of the layouts I code and I’m often able to advise the creatives in what would be the best approach in a certain page or type of business. </p>
+                        <p>Right now, I'm working at  <a href="http://www.itelios.com" target="_blank"><strong>Itelios</strong></a> leading the front-end development team in Brazil, focusing in the architecture of new projects, code reviewing and training the team (and myself :P). </p>
+                        <p>When I’m not working, I like to travel, getting to know new places and enjoying good meals (whether I’m cooking or going to restaurants) and good beers.</p>
                     </div>
-                    <div class="col-sm-4">
-                        <div class="story">
-                            <p>Right now, I'm working at Itelios Brasil leading a team of 4 front-end developers, guaranteeing the quality of our projects, and assuring everyone is learning to hit the same code quality level. I also "get my hands dirty" and work in projects, specially at the kick-off/scaffolding phase ensuring the architecture is the best for that kind of project. </p>
-                            <p>When I’m not working, I like to travel, getting to know new places and enjoying good meals (whether I’m cooking or going to restaurants) and good beers.</p>
-                        </div>
-                    </div>	
+                    <div class="actions">
+                    <a class="btn btn-default" href="http://plus.google.com/117421466259959922828" rel="author">view my resume (CV)</a>
+                </div>
+            </div>
+        </div>
+        <div class="container works" ng-controller="WorksCtrlr">
+            <h2 class="section-title"><span>Latest Work</span></h2>
+            <h3 class="section-small">(*some of those works were made under a confidentiality agreement, so I can’t reveal the identity of the clients involved)</h3>
+            <div class="row">
+                <div class="col-sm-4" ng-repeat="work in works">
+                    <div class="thumbnail">
+                    <div class="thumb-bg"><span class="thumb-inner"><img src="img/logo-confidential.png" ng-src="{{work.field_image.url}}" width="190" alt="..."></span></div>
+                    <div class="caption">
+                        <h3>{{work.title}}</h3>
+                        <p><strong>What I did:</strong></p>
+                        <div ng-bind-html="work.field_what_i_did.value"></div>
+                        <p><strong>Based in:</strong></p>
+                        <div ng-bind-html="work.field_based_in.value"></div>
+                        <p><strong>Support:</strong> </p>
+                        <div ng-bind-html="work.field_support.value"></div>
+                    </div>
+                    </div>
                 </div>
             </div>
         </div>
