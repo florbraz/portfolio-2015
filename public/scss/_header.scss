@@ -6,15 +6,6 @@ header {
     z-index: 50;
     padding-bottom:20px;
     font-size: 18px;
-    &:after {
-        width:100%;
-        height:45vh;
-        background: linear-gradient(to bottom, $header-background 0%,rgba($header-background,0) 100%); /* W3C */
-        position:fixed;
-        top:78px;
-        content:"";
-        pointer-events: none;
-    }
     a {
         color:$header-color;
         text-decoration:none;

@@ -2,11 +2,15 @@ requirejs.config({
     baseUrl: "js/lib",
     paths: {
         app: "../app",
+        lib: "../lib",
         jquery: [
             '//ajax.aspnetcdn.com/ajax/jquery/jquery-2.0.0.min',
             //If the CDN location fails, load from this location
             'js/lib/jquery-2.0.0.min'
         ]
+    },
+    shim: {
+        typed  : ["jquery"]
     }
 });
 
@@ -51,8 +55,10 @@ require(
         //$(window).on("focus", function() { // adding resize functions to window focus (as user might be on other tab when the resize is triggered)
         //     App.Resize();
         // });  
+
+        App.Navigation.Init();
         
-        App.Navigation.Init();        
+        App.Home.Init();        
     
     }
 );
