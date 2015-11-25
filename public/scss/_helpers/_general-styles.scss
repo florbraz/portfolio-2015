@@ -271,5 +271,12 @@ $button-color: $main-highlight;
 .work {
     width:33.3333%;
     font-size:20px;
+    display:inline-block;
     padding:0 15px;
+    vertical-align: top;
+    a {
+        text-decoration: none;
+        color:$main-color;
+        display:block;
+    }
 }
