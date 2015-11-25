@@ -1,6 +1,6 @@
 "use strict";
 
-define(function() {
+define(["app/controllers"], function() {
     var App = {
         Utils : {
             IsOnPage: function(elem) {

@@ -35,32 +35,6 @@ require(
         
         $.extend(App, Navigation, Home);
         
-        
-        // for (var key in App) {
-        //     if (App.hasOwnProperty(key)) {
-        //         var obj = App[key];
-        //             for (var prop in obj) {
-        //             // important check that this is objects own property 
-        //             // not from prototype prop inherited
-        //             if(obj.hasOwnProperty(prop)){
-        //                 alert(prop + " = " + obj[prop]);
-        //             }
-        //         }
-        //     }
-        // }
-        
-        //App.Init();
-        //App.Resize();
-                
-        //$(window).resize(function() {
-        //     App.Resize();
-        // });
-    
-        
-        //$(window).on("focus", function() { // adding resize functions to window focus (as user might be on other tab when the resize is triggered)
-        //     App.Resize();
-        // });  
-
         App.Navigation.Init();
         
         App.Home.Init();        
