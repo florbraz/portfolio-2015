@@ -1,0 +1,42 @@
+<h2>My Process</h2>
+
+<taskfilter list="MyProcess"></taskfilter>
+
+<div ng-repeat="department in myProcesses.data">
+		
+	<div class="team-group">
+		<h4> 
+			<input ng-click="showDepartmentProcesses()" type="checkbox" ng-checked="processListVisible" data-toggle="toggle" id="signature">
+			<span>{{department.name}}</span>
+		</h4>
+		<div class="table-responsive-wrapper {{processListVisible ? 'enabled' : ''}}">
+			<table class="table table-responsive" data-sortable>
+				<thead>
+					<tr>
+						<th><span>ID</span></th>
+						<th><span>Process Name</span></th>
+						<th><span>Version</span></th>
+						<th><span>Step</span></th>
+						<th><span>Activity</span></th>
+						<th><span>Created on</span></th>
+						<th><span>Overdue by</span></th>
+					</tr>
+				</thead>
+				<tbody>					
+					<tr ng-repeat="process in department.processes | filter: TaskFilter.status == 'all' ? undefined : {'status' : TaskFilter.status} as results"">
+						<td><a href="">{{process.id}}</a></td>
+						<td><a href="#/my-process/view/{{process.id}}">{{process.name}}</a></td>
+						<td><a href="">{{process.version}}</a></td>
+						<td><a href="">{{process.step}}</a></td>
+						<td><a href="">{{process.activity}}</a></td>
+						<td>{{process.due_on}}</td>
+						<td>{{process.overdue_by}}</td>
+					</tr>
+					<tr ng-if="results.length == 0">
+						<td colspan="7">No tasks found with the status <i>{{TaskFilter.status}}</i></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

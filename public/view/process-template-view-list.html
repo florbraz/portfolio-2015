@@ -1,0 +1,6 @@
+<div class="edit-template title-spacing">
+	<div class="form-group">
+		<label for="">Select a process to view</label>
+		<select ng-change="loadProcess(processList.current.id)" ng-options="process as process.value for process in processList.processes" ng-model="processList.current" class="form-control"></select>
+	</div>
+</div>

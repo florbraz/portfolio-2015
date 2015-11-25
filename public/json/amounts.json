@@ -1,0 +1,25 @@
+[
+	{
+		"name" : "MyTasks",
+		"filters" : {
+			"all" : 150,
+			"ongoing" : 30,
+			"expiring-soon" : 29,
+			"done" : 14,
+			"overdue" : 2,
+			"done-with-delay" : 0
+		}
+	},
+	
+	{
+		"name" : "MyTeamTasks",
+		"filters" : {
+			"all" : 190,
+			"ongoing" : 10,
+			"expiring-soon" : 196,
+			"done" : 6,
+			"overdue" : 0,
+			"done-with-delay" : 59
+		}
+	}
+]

@@ -1,0 +1,54 @@
+[
+	{
+		"id" : "1",
+		"name" : "Josef Martin",
+		
+		"tasks" : [
+			{
+				"id" : "2",
+				"process" : "1",
+				"name" : "Sell stuff",
+				"step" : "2 - Review items",
+				"activity" : "Confirm order",
+				"due_on" : "25/10/2004",
+				"overdue_by" : "10 hours",
+				"status" : "Done",
+				"filter" : "done",				
+				"attachments" : true
+			},
+			
+			{
+				"id" : "2",
+				"process" : "1",
+				"name" : "Sell stuff",
+				"step" : "2 - Review items",
+				"activity" : "Confirm order",
+				"due_on" : "25/10/2004",
+				"overdue_by" : "10 hours",
+				"status" : "Done",
+				"filter" : "done",				
+				"attachments" : false
+			}
+		]
+	},
+	
+	{
+		"id" : "2",
+		"name" : "Martha Stewart",
+		
+		"tasks" : [
+			{
+				"id" : "2",
+				"process" : "1",
+				"name" : "Sell stuff",
+				"step" : "2 - Review items",
+				"activity" : "Confirm order",
+				"due_on" : "25/10/2004",
+				"overdue_by" : "10 hours",
+				"status" : "Overdue",
+				"filter" : "overdue",				
+				"attachments" : true
+			}
+		]
+	}
+]

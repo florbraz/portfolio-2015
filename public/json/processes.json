@@ -1,0 +1,51 @@
+[
+	{
+		"name" : "Department A",
+		
+		"processes" : [
+			{
+				"id" : "1",
+				"user" : "1",
+				"name" : "Sell stuff",
+				"version" : "Done",
+				"step" : "2 - Review items",
+				"activity" : "Confirm order",
+				"created_on" : "25/10/2004",
+				"overdue_by" : "10 hours",
+				"status" : "Done",
+				"filter" : "done"
+			},			
+			{
+				"id" : "2",
+				"user" : "1",
+				"name" : "Sell stuff",
+				"version" : "Done",
+				"step" : "2 - Review items",
+				"activity" : "Confirm order",
+				"created_on" : "25/10/2004",
+				"overdue_by" : "10 hours",
+				"status" : "Overdue",
+				"filter" : "overdue"
+			}
+		]
+	},
+	
+	{
+		"name" : "Department B",
+		
+		"processes" : [
+			{
+				"id" : "1",
+				"user" : "1",
+				"name" : "Sell stuff",
+				"version" : "Done",
+				"step" : "2 - Review items",
+				"activity" : "Confirm order",
+				"created_on" : "25/10/2004",
+				"overdue_by" : "10 hours",
+				"status" : "Ongoing",
+				"filter" : "ongoing"
+			}
+		]
+	}
+]

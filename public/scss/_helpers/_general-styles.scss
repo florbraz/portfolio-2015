@@ -155,13 +155,121 @@ $button-color: $main-highlight;
     50% { opacity:0; }
     100% { opacity:1; }
 }
-@-webkit-keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
+
+// skills 
+
+.about-me {
+    padding:5% 15px;
 }
-@-moz-keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
+
+.skills {
+    display:table;
+    width:100%;
+    background:#8995A5;
+    .container {
+        padding:6% 0;
+    }
+}
+.me {
+    width:25%;
+    display:inline-block;
+    padding-right: 30px;
+    vertical-align:top;
+    img {
+        width:100%;
+        height:auto;
+    }
+    .btn {
+        margin-top:1.8em;
+        margin-bottom:0;
+    }
+}
+
+.story {
+    display:inline-block;
+    width:70%;
+    margin-top: -8px;
+    vertical-align:top;
+}
+
+.skill-set {
+    color:#fff;
+    display:table-cell;
+    text-align:center;
+    font-size:18px;
+    width:20%;
+    padding:0 20px;
+    &:first-child {
+        padding-left:15px;
+    }
+    &:last-child {
+        padding-right:15px;
+    }
+    h3 {
+        text-align: center;
+        font-size:1.3em;
+        line-height:1.2;
+        font-family:$f-regular;
+        height: 2.5em;
+        margin-top: -38px;
+        margin-bottom: 16px;
+    }
+    .ico {
+        @include ico(ux-design); 
+        transform: scale(0.65) translate(0,-54px);
+    }
+    .skill-content {
+        text-align:left;
+    }
+    ul {
+        list-style:none;
+        padding:0;
+        margin:0;
+    }
+    li {
+        list-style:none;
+        padding:8px 0;
+        line-height: 1.3;
+    }
+}
+
+.skill-front-end {
+    .ico {
+        @include ico(front-end); 
+        transform:scale(0.7) translate(0, -42px);
+    }
+}
+
+
+.skill-platforms {
+    width:16%;
+    .ico {
+        @include ico(platform);
+
+    }
+}
+
+.skill-other-technical {
+    .ico {
+        @include ico(other-tech);
+        transform:scale(0.65) translate(0, -69px);
+    }
+}
+
+.skill-non-technical {
+    .ico {
+        @include ico(non-tech);
+    }
+}
+.works {
+    padding:5% 15px;   
+    .row {
+        font-size:0;
+    }
+}
+
+.work {
+    width:33.3333%;
+    font-size:20px;
+    padding:0 15px;
 }

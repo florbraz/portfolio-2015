@@ -1,0 +1,35 @@
+<h2>My Tasks</h2>				
+
+<taskfilter list="MyTasks"></taskfilter>
+
+<div class="table-responsive-wrapper enabled">
+	<table class="table table-responsive" data-sortable>
+		<thead>
+			<tr>
+				<th><span>ID</span></th>
+				<th><span>Process Name</span></th>
+				<th><span>Step</span></th>
+				<th><span>Activity</span></th>
+				<th><span>Due On</span></th>
+				<th><span>Overdue by</span></th>
+				<th><span>Status</span></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="task in myTasks.data | filter: TaskFilter.status == 'all' ? undefined : {'filter' : TaskFilter.status} as results">
+				<td><a href="#/my-process/view/{{task.process}}">{{task.process}}</a></td>
+				<td><a href="#/my-process/view/{{task.process}}">{{task.name}}</a></td>
+				<td><a href="#/my-process/view/{{task.process}}">{{task.step}}</a></td>
+				<td><a href="#/my-process/view/{{task.process}}">{{task.activity}}</a></td>
+				<td>{{task.due_on}}</td>
+				<td>{{task.overdue_by}}</td>
+				<td><span class="filter-button filter-button-{{task.filter}} filled">{{task.status}}</span></td>
+				<td><span ng-show="{{task.attachments}}" class="glyphicon glyphicon-paperclip" aria-hidden="true"></span></td>
+			</tr>
+			<tr ng-if="results.length == 0">
+				<td colspan="8">No tasks found with the status <i>{{TaskFilter.status}}</i></td>
+			</tr>					
+		</tbody>
+	</table>
+</div>

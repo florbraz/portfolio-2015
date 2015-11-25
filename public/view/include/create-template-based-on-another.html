@@ -1,0 +1,8 @@
+<h2>Create based on another template</h2>
+
+<div class="title-spacing">
+	<div class="form-group">
+		<select ng-options="process as process.value for process in processList.processes" ng-model="Templates.processChosen" class="form-control"></select>
+		<button ng-click="load(Templates.processChosen.id)" ng-disabled="!Templates.processChosen">Load</button>
+	</div>
+</div>

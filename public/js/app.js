@@ -3,6 +3,8 @@ requirejs.config({
     paths: {
         app: "../app",
         lib: "../lib",
+        directive: "../directive",
+        factory: "../factory",
         jquery: [
             '//ajax.aspnetcdn.com/ajax/jquery/jquery-2.0.0.min',
             //If the CDN location fails, load from this location
@@ -10,8 +12,11 @@ requirejs.config({
         ]
     },
     shim: {
-        typed  : ["jquery"]
-    }
+        typed  : ["jquery"],
+        'angularAMD' : ['angular'],
+        'angular-route' : ['angular']
+    },
+    deps : ['app']
 });
 
 require(

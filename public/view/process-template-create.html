@@ -1,0 +1,262 @@
+<h2>Template - Create</h2>
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">Process Details</h3>
+	</div>
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="form-group">
+					<label for="process-name">Process Name</label>
+					<input type="text" class="form-control" id="process-name" placeholder="Process name" />
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="form-group">
+					<label for="">Owner Department</label>
+					<select ng-options="v for v in Templates.processViewData.owner_department" ng-model="Templates.processViewData.current_owner_department" class="form-control"></select>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="form-group">
+					<label for="">Owner Cost Center</label>
+					<select ng-options="v for v in Templates.processViewData.owner_cost_center" ng-model="Templates.processViewData.current_owner_cost_center" class="form-control"></select>
+				</div>
+			</div>
+		
+			<div class="col-sm-4">
+				<div class="form-group">
+					<label for="">Atribute tasks towards people</label>
+					<select ng-options="v for v in Templates.processViewData.how_to_attribute_tasks_towards_people" ng-model="Templates.processViewData.current_how_to_attribute_tasks_towards_people" class="form-control"></select>
+				</div>
+			</div>
+			<div class="col-sm-2">
+				<div class="form-group">
+					<label for="">SLA</label>
+					<select ng-options="v for v in Templates.processViewData.SLA" ng-model="Templates.processViewData.current_SLA" class="form-control"></select>
+				</div>
+			</div>
+			<div class="col-sm-2">
+				<div class="form-group">
+					<label for="">Version</label>
+					<input type="text" ng-model="Templates.processViewData.version" class="form-control" readonly />
+				</div>
+			</div>
+			<div class="col-sm-12">
+				<div class="form-group">
+					<label for="">Description</label>
+					<textarea class="form-control" rows="4"></textarea>
+				</div>
+			</div>
+			<div class="col-sm-12">
+				<a href="" class="link underline" ng-click="createTemplateBasedOnAnother()">or create based in another template</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">Steps</h3>
+	</div>
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-sm-6" ng-if="newSteps.length != 0 || Templates.processViewData.steps.length != 0">
+				<ul class="list-group">
+					
+					<li ng-click="listActivities(step)" ng-repeat="step in Templates.processViewData.steps" class="list-group-item">
+						<span class="v-align-middle">{{step.name}}</span>
+					</li>
+					
+					<li ng-click="listActivities(step)" ng-repeat="step in newSteps" class="list-group-item">
+						<span class="v-align-middle">{{step.name}}</span>
+					</li>
+				</ul>
+			</div>
+			<div class="col-sm-6 {{newSteps.length != 0 || Templates.processViewData.steps.length != 0 ? 'create-step' : ''}}">
+				<h4>Create Step</h4>
+				<div class="form-group">
+					<label for="">Step name</label>
+					<input type="text" ng-model="newStep.name" class="form-control"/>
+				</div>
+				<div class="form-group">
+					<label for="">SLA</label>
+					<select ng-options="v for v in Templates.processViewData.newStep_SLA" ng-model="Templates.processViewData.curren_newStep_SLA" class="form-control"></select>
+				</div>
+				<div class="text-right">
+					<span class="btn-wrapper"><button ng-click="createStep()" ng-disabled="!newStep.name" class="btn btn-primary">Add step</button></span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="panel panel-default" ng-show="stepIsSelected">
+	<div class="panel-heading">
+		<h3 class="panel-title">Activities</h3>
+	</div>
+	<div class="panel-body">
+		<ul class="list-group">
+			<!--<li class="list-group-item is-done">
+				<span class="glyphicon glyphicon-check" aria-hidden="true"></span> <span class="v-align-middle">Lorem ipsum dolor</span>
+				<ul class="list-group">
+					<li class="list-group-item is-done">
+						<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> <span class="v-align-middle">Sit amet</span>
+					</li>
+					<li class="list-group-item is-done">
+						<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> <span class="v-align-middle">Adiscipling elit</span>
+					</li>
+				</ul>
+			</li>
+			<li class="list-group-item is-current">
+				<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> <span class="v-align-middle">Solor adnate</span>
+			</li>-->
+			<li ng-click="loadActivity(activity)" ng-repeat="activity in stepActivities" class="list-group-item">
+				<span class="v-align-middle">{{activity.name}}</span>
+			</li>
+			<li ng-click="loadActivity(activity)" ng-repeat="activity in newActivities" class="list-group-item">
+				<span class="v-align-middle">{{activity.name}}</span>
+			</li>
+			<li class="list-group-item">
+				<span class="v-align-middle">Add new activity</span> 
+				<button ng-click="createActivity()" class="btn btn-info"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+			</li>
+		</ul>
+	</div>
+</div>
+<div ng-if="isEdittingActivity">
+	<h2 class="task-name">Editting New Activity</h2>
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="form-group">
+				<label for="">Activity name</label>
+				<input type="text" value="" class="form-control"/>
+			</div>
+		</div>
+		<div class="col-sm-12">
+			<div class="form-group">
+				<label for="">Activity Description</label>
+				<textarea class="form-control" rows="4"></textarea>
+			</div>
+		</div>
+		<div class="col-sm-3">
+			<div class="form-group">
+				<label for="">Activity Department</label>
+				<select class="form-control">
+					<option>Department A</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+				</select>
+			</div>
+		</div>
+		<div class="col-sm-3">
+			<div class="form-group">
+				<label for="">Activity Cost Center</label>
+				<select class="form-control">
+					<option>Cost Center A</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+				</select>
+			</div>
+		</div>
+		<div class="col-sm-3">
+			<div class="form-group">
+				<label for="">Activity SLA</label>
+				<select class="form-control">
+					<option>2 days</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+				</select>
+			</div>
+		</div>
+		<div class="col-sm-3">
+			<div class="form-group">
+				<label for="">Role to execute activity</label>
+				<select class="form-control">
+					<option>Specialist Packager</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+				</select>
+			</div>
+		</div>
+		<div class="col-sm-5">
+			<div class="form-group">
+				<label for="">Link with another activity in this step</label>
+				<select class="form-control">
+					<option>Print Order</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+				</select>
+			</div>
+		</div>
+		<div class="col-sm-12">
+			<div class="form-actions text-right">
+				<span class="btn-wrapper"><button ng-click="saveActivity()" class="btn btn-primary">Add Activity</button></span>
+			</div>
+		</div>
+	</div>
+</div>
+<div ng-if="isAddingActivity">
+	<h2 class="task-name">{{resources.TemplateCreate.adding_new_activity}}</h2>
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="form-group">
+				<label for="">Activity name</label>
+				<input type="text" ng-model="newActivity.name" class="form-control"/>
+			</div>
+		</div>
+		<div class="col-sm-12">
+			<div class="form-group">
+				<label for="">Activity Description</label>
+				<textarea class="form-control" rows="4" ng-model="newActivity.description"></textarea>
+			</div>
+		</div>
+		<div class="col-sm-3">
+			<div class="form-group">
+				<label for="">Activity Department</label>
+				<select ng-options="v for v in Templates.processViewData.activityModel.department" ng-model="Templates.processViewData.activityModel.current_department" class="form-control"></select>
+			</div>
+		</div>
+		<div class="col-sm-3">
+			<div class="form-group">
+				<label for="">Activity Cost Center</label>
+				<select ng-options="v for v in Templates.processViewData.activityModel.cost_center" ng-model="Templates.processViewData.activityModel.current_cost_center" class="form-control"></select>
+			</div>
+		</div>
+		<div class="col-sm-3">
+			<div class="form-group">
+				<label for="">Activity SLA</label>
+				<select ng-options="v for v in Templates.processViewData.activityModel.SLA" ng-model="Templates.processViewData.activityModel.current_SLA" class="form-control"></select>
+			</div>
+		</div>
+		<div class="col-sm-3">
+			<div class="form-group">
+				<label for="">Role to execute activity</label>
+				<select ng-options="v for v in Templates.processViewData.activityModel.role_to_execute_activity" ng-model="Templates.processViewData.activityModel.current_role_to_execute_activity" class="form-control"></select>
+			</div>
+		</div>
+		<div class="col-sm-5">
+			<div class="form-group">
+				<label for="">Link with another activity in this step</label>
+				<select ng-options="v for v in Templates.processViewData.activityModel.link_with_another_activity_in_this_step" ng-model="Templates.processViewData.activityModel.current_link_with_another_activity_in_this_step" class="form-control"></select>
+			</div>
+		</div>
+		<div class="col-sm-12">
+			<div class="form-actions text-right">
+				<span class="btn-wrapper"><button ng-disabled="!newActivity.title" ng-click="saveActivity(newActivity)" class="btn btn-primary">Add Activity</button></span>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="form-actions text-right">
+	<span class="btn-wrapper"><button class="btn btn-default" disabled>Cancel</button></span>
+	<span class="btn-wrapper"><button class="btn btn-primary" disabled>Save</button></span>
+</div>

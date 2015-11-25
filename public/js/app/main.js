@@ -14,7 +14,7 @@ define(function() {
                         var elemTop = $elem.offset().top;
                         var elemBottom = elemTop + $elem.height();
                     
-                        return ((elemBottom <= docViewBottom) && (elemTop + ($elem.height()) >= docViewTop));      
+                        return ((elemBottom <= docViewBottom) && (elemTop + ($elem.height() / 2) >= docViewTop));      
                 }
             },
             WindowWidth: function() {

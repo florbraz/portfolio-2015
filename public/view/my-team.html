@@ -1,0 +1,44 @@
+<h2>My Team Tasks</h2>
+
+<taskfilter list="MyTeamTasks"></taskfilter>
+
+<div ng-repeat="user in myTeam.data">		
+		
+	<div class="team-group">
+		<h4> 
+			<input type="checkbox" ng-click="showUserTasks()" data-toggle="toggle" id="signature">
+			<span>{{user.name}}</span>
+		</h4>
+		<div class="table-responsive-wrapper enabled" ng-show="taskListVisible">
+			<table class="table table-responsive" data-sortable>
+				<thead>
+					<tr>
+						<th><span>ID</span></th>
+						<th><span>Process Name</span></th>
+						<th><span>Step</span></th>
+						<th><span>Activity</span></th>
+						<th><span>Start Date</span></th>
+						<th><span>Due Date</span></th>
+						<th><span>Status</span></th>
+						<th colspan="2">Remaining SLA</th>
+					</tr>
+				</thead>
+				<tbody>					
+					<tr ng-repeat="task in user.tasks | filter: TaskFilter.status == 'all' ? undefined : {'status' : TaskFilter.status} as results">
+						<td><a href="#/my-process/view/{{task.process}}">{{task.process}}</a></td>
+						<td><a href="#/my-process/view/{{task.process}}">{{task.name}}</a></td>
+						<td><a href="#/my-process/view/{{task.process}}">{{task.step}}</a></td>
+						<td><a href="#/my-process/view/{{task.process}}">{{task.activity}}</a></td>
+						<td>{{task.due_on}}</td>
+						<td>{{task.overdue_by}}</td>
+						<td>{{task.status}} <span class="filter-button filter-button-overdue filled square"></span></td>
+						<td><span ng-show="{{task.attachments}}" class="glyphicon glyphicon-paperclip" aria-hidden="true"></span></td>
+					</tr>
+					<tr ng-if="results.length == 0">
+						<td colspan="8">No tasks found with the status <i>{{TaskFilter.status}}</i></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

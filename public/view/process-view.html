@@ -1,0 +1,265 @@
+<h2>Process View</h2>
+<div ng-repeat="process in myProcesses.viewData">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Process Details</h3>
+		</div>
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-sm-2">
+					<div class="form-group">
+						<label for="process-id">ID</label>
+						<input type="text" class="form-control" id="process-id" placeholder="ID" ng-model="process.id" readonly>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="form-group">
+						<label for="process-name">Process Name</label>
+						<input type="text" class="form-control" id="process-name" placeholder="Process name" ng-model="process.name" readonly>
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div class="form-group">
+						<label for="">Owner Department</label>
+						<select ng-options="v for v in process.owner_department" ng-model="process.current_owner_department" class="form-control" readonly></select>
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div class="form-group">
+						<label for="">Owner Cost Center</label>
+						<select ng-options="v for v in process.owner_cost_center" ng-model="process.current_owner_cost_center" class="form-control" readonly></select>
+					</div>
+				</div>
+			
+				<div class="col-sm-4">
+					<div class="form-group">
+						<label for="">Atribute tasks towards people</label>
+						<select ng-options="v for v in process.how_to_attribute_tasks_towards_people" ng-model="process.current_how_to_attribute_tasks_towards_people" class="form-control" readonly></select>
+					</div>
+				</div>
+				<div class="col-sm-2">
+					<div class="form-group">
+						<label for="">SLA</label>
+						<select ng-options="v for v in process.SLA" ng-model="process.current_SLA" class="form-control" readonly></select>
+					</div>
+				</div>
+				<div class="col-sm-2">
+					<div class="form-group">
+						<label for="">Version</label>
+						<input type="text" ng-model="process.version" class="form-control" readonly />
+					</div>
+				</div>
+				<div class="col-sm-2">
+					<div class="form-group">
+						<label for="">Created On</label>
+						<input type="text" placeholder="mm/dd/yyyy" ng-model="process.created_on" class="form-control" readonly />
+					</div>
+				</div>
+				<div class="col-sm-2">
+					<div class="form-group">
+						<label for="">Due On</label>
+						<input type="text" placeholder="mm/dd/yyyy" ng-model="process.due_on" class="form-control" readonly />
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="form-group">
+						<label for="">Description</label>
+						<textarea class="form-control" rows="4" ng-model="process.description" readonly></textarea>
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div class="form-group">
+						<label for="">Status</label>
+						<input type="text" ng-model="process.status" class="form-control" readonly/>
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div class="form-group">
+						<label for="">Emitter</label>
+						<input type="text" ng-model="process.emitter" class="form-control" readonly/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="panel panel-default" data-steps>
+				<div class="panel-heading">
+					<h3 class="panel-title">Steps</h3>
+				</div>
+				<div class="panel-body">
+					<ul class="list-group">
+						<li class="list-group-item is-{{step.current_status}}" ng-repeat="step in process.steps" ng-click="loadStepActivities(step)">
+							<span class="glyphicon glyphicon-{{step.current_status_icon}}" aria-hidden="true"></span> <span class="v-align-middle">{{step.name}}</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="panel panel-default" ng-if="selectedStepActivities" data-activities>
+				<div class="panel-heading">
+					<h3 class="panel-title">Activities</h3>
+				</div>
+				<div class="panel-body">
+					<ul class="list-group">
+						<li class="list-group-item is-{{activity.current_status}}" ng-repeat="activity in selectedStepActivities" ng-click="loadActivity(activity)">
+							<span class="glyphicon glyphicon-{{activity.current_status_icon}}" aria-hidden="true"></span> <span class="v-align-middle">{{activity.name}}</span>
+							<ul ng-repeat="sub_activity in activity.sub_activities" ng-if="activity.sub_activities && activity.sub_activities.length != 0" class="list-group">
+								<li class="list-group-item is-{{sub_activity.current_status}}" ng-repeat="activity in selectedStepActivities" ng-click="loadSubActivity(sub_activity)">
+									<span class="glyphicon glyphicon-{{sub_activity.current_status_icon}}" aria-hidden="true"></span> <span class="v-align-middle">{{sub_activity.name}}</span>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div ng-if="activity">
+		<h2 class="task-name">{{activity.name}}</h2>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="form-group">
+					<label for="">{{activity.description}}</label>
+					<textarea class="form-control" rows="4" readonly></textarea>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="form-group">
+					<label for="">Activity Department</label>
+					<select ng-options="v for v in activity.department" ng-model="activity.current_department" class="form-control" readonly></select>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="form-group">
+					<label for="">Activity Cost Center</label>
+					<select ng-options="v for v in activity.cost_center" ng-model="activity.current_cost_center" class="form-control" readonly></select>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="form-group">
+					<label for="">Activity Status</label>
+					<input type="text" ng-model="activity.status" class="form-control" readonly/>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="form-group">
+					<label for="">Activity SLA</label>
+					<select ng-options="v for v in activity.SLA" ng-model="activity.current_SLA" class="form-control" readonly></select>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="form-group">
+					<label for="">Role to execute activity</label>
+					<select ng-options="v for v in activity.role_to_execute_activity" ng-model="activity.current_role_to_execute_activity" class="form-control" readonly></select>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="form-group">
+					<label for="">Assigned to</label>
+					<select ng-options="v for v in activity.assigned_to" ng-model="activity.current_assigned_to" class="form-control" readonly></select>
+				</div>
+			</div>
+			<div class="col-sm-12">
+				<div class="form-group">
+					<label for="">Activity Report</label>
+					<textarea class="form-control" rows="5" ng-model="activity.activity_report"></textarea>
+				</div>
+			</div>
+			<div class="col-sm-12">
+				<div class="form-group">					
+					<div class="clearfix label-group">
+						<label for="">Activity Messages</label>
+						<div class="pull-right">
+							<button class="btn btn-info btn-sm" ng-click="openNewMessageDialog()">
+								<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> 
+							</button>
+						</div>
+					</div>					
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<div class="table-responsive-wrapper enabled">
+								<table class="table table-responsive">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Sent On</th>
+											<th>Message</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr ng-repeat="message in activity.messages">
+											<td>{{message.from}}</td>
+											<td>{{message.sent_on}}</td>
+											<td>{{message.message}}</td>
+										</tr>
+										<tr ng-repeat="message in newMessages">
+											<td>{{message.from}}</td>
+											<td>{{message.sent_on}}</td>
+											<td>{{message.message}}</td>
+										</tr>
+										<tr ng-if="newMessages.length == 0 && (!activity.messages || activity.messages.length == 0)">
+											<td colspan="3">No messages</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!--@TODO (info required)-->
+			
+			<!--<div class="col-sm-12">
+				<div class="form-group">
+					<label for="">Attached files</label>
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<div class="table-responsive-wrapper enabled">
+								<table class="table table-responsive">
+									<thead>
+										<tr>
+											<th>File Name</th>
+											<th>Author</th>
+											<th>Sent On</th>
+											<th>Message</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>											
+											<td>
+												<a href="" class="file">{{message.attached_filename}}</a>
+											</td>
+											<td>{{message.from}}</td>
+											<td>{{message.sent_on}}</td>
+											<td>{{message.message}}</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>	
+				</div>
+			</div>-->
+			<div class="col-sm-5 col-xs-9">
+				<div class="form-group">
+					<label for="">Virtual Signature <span class="no-mobile"> - For Approval or Review</span></label>
+					<input type="text" value="{{isSigned ? 'Signed' : 'Unsigned'}}" class="form-control"/>
+				</div>
+			</div>
+			<div class="col-sm-2 col-xs-3">
+				<div class="form-group">
+					<label for="signature"> </label> <br />
+					<input type="checkbox" ng-model="isSigned" data-toggle="toggle" id="signature">
+				</div>
+			</div>
+		</div>
+		<div class="form-actions text-right">
+			<span class="btn-wrapper"><button class="btn btn-default">Cancel</button></span>
+			<span class="btn-wrapper"><button class="btn btn-primary">Save</button></span>
+		</div>
+	</div>
+</div>

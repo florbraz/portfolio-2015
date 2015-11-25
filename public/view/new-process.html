@@ -1,0 +1,37 @@
+<h2>My Process - Open New</h2>
+<div class="team-group" ng-repeat="processModel in processModels.viewData">
+	<h4> 
+		<input type="checkbox" ng-model="showProcessModel" data-toggle="toggle" id="signature">
+		<span>{{processModel.department}}</span>
+	</h4>
+	<div class="row" ng-show="showProcessModel">
+		<div class="col-sm-6">
+			<div class="form-group">
+				<label for="process-name">Process Name</label>
+				<select ng-options="v for v in processModel.process_name" ng-model="processModel.current_process_name" class="form-control" id="process-name"></select>
+			</div>
+		</div>
+		<div class="col-sm-2 col-xs-6">
+			<div class="form-group">
+				<label> </label>
+				<div class="checkbox text-right text-nowrap">
+					<label>
+						<input type="checkbox" ng-checked="{{processModel.versions.available}}"> choose version
+					</label>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-2 col-xs-6">
+			<div class="form-group">
+				<label for="process-version"> </label>
+				<select ng-options="v for v in processModel.versions.values" ng-model="processModel.versions.current"  ng-disabled="{{!processModel.versions.available}}" class="form-control" id="process-version"></select>
+			</div>
+		</div>
+		<div class="col-sm-2">
+			<div class="form-group">
+				<label> </label>
+				<button class="btn btn-primary btn-block">Open</button>
+			</div>
+		</div>
+	</div>
+</div>

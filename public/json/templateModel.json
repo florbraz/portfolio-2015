@@ -1,0 +1,248 @@
+{
+	"id" : "1",
+	"name" : "",
+	"current_owner_department" : "Department C",
+	"owner_department" : [
+		"Department A",
+		"Department B",
+		"Department C"
+	],
+	"current_owner_cost_center" : "Cost Center F",
+	"owner_cost_center" : [
+		"Cost Center A",
+		"Cost Center B",
+		"Cost Center F"
+	],
+	"current_how_to_attribute_tasks_towards_people" : "Via something",
+	"how_to_attribute_tasks_towards_people" : [
+		"Via load balancing",
+		"Via something",
+		"Via something else"
+	],
+	"current_SLA" : "1 day",
+	"SLA" : [
+		"1 day",
+		"2 days",
+		"3 days"
+	],
+	"version" : "1.0",
+	"description" : "",
+		"steps" : [
+		
+		{
+			"id" : "1",
+			"name" : "Lorem ipsum",
+			"status" : "1",
+			"current_status" : "done",
+			"current_status_icon" : "check",
+			
+			"activities" : [
+		
+				{
+					"id" : "1",
+					"name" : "Activity id 1 name from step id 1",
+					"description" : "Activity id 1 description from step id 1",
+					"current_status" : "done",
+					"current_status_icon" : "check",
+					"current_department" : "Department A",
+					"department" : [
+						"Department A",
+						"Department B",
+						"Department C"
+					],
+					"current_cost_center" : "Cost Center A",
+					"cost_center" : [
+						"Cost Center A",
+						"Cost Center B",
+						"Cost Center C"
+					],
+					"status" : "Ongoing - on track",
+					"current_SLA" : "1 day",
+					"SLA" : [
+						"1 day",
+						"2 days",
+						"3 days"
+					],
+					"current_role_to_execute_activity" : "Specialist Packager",
+					"role_to_execute_activity" : [
+						"Specialist Packager",
+						"Something else"
+					],
+					"current_assigned_to" : "Nelson Menetti", 
+					"assigned_to" : [
+						"Nelson Menetti",
+						"Someone else"						
+					],
+					"activity_report" : "Some activity report",
+					"virtual_signature" : {
+						"value" : "Signed",
+						"unsigned" : false
+					},
+					
+					"sub_activities" : [
+						{
+							"id" : "1",
+							"name" : "Activity id 1 name from step id 1",
+							"description" : "Activity id 1 description from step id 1",
+							"current_status" : "done",
+							"current_status_icon" : "check",
+							"current_department" : "Department A",
+							"department" : [
+								"Department A",
+								"Department B",
+								"Department C"
+							],
+							"current_cost_center" : "Cost Center A",
+							"cost_center" : [
+								"Cost Center A",
+								"Cost Center B",
+								"Cost Center C"
+							],
+							"status" : "Ongoing - on track",
+							"current_SLA" : "1 day",
+							"SLA" : [
+								"1 day",
+								"2 days",
+								"3 days"
+							],
+							"current_role_to_execute_activity" : "Specialist Packager",
+							"role_to_execute_activity" : [
+								"Specialist Packager",
+								"Something else"
+							],
+							"current_assigned_to" : "Nelson Menetti", 
+							"assigned_to" : [
+								"Nelson Menetti",
+								"Someone else"						
+							],
+							"activity_report" : "Some activity report",
+							"virtual_signature" : {
+								"value" : "Signed",
+								"unsigned" : false
+							}
+						}						
+					]					
+				},
+				
+				{
+					"id" : "2",
+					"name" : "Activity id 2 name from step id 1",
+					"description" : "Activity id 2 description from step id 1",
+					"current_status" : "waiting",
+					"current_status_icon" : "time",
+					"current_department" : "Department A",
+					"department" : [
+						"Department A",
+						"Department B",
+						"Department C"
+					],
+					"current_cost_center" : "Cost Center A", 
+					"cost_center" : [
+						"Cost Center A",
+						"Cost Center B",
+						"Cost Center C"
+					],
+					"status" : "Ongoing - on track",
+					"current_SLA" : "1 day",
+					"SLA" : [
+						"1 day",
+						"2 days",
+						"3 days"
+					],
+					"current_role_to_execute_activity" : "Specialist Packager", 
+					"role_to_execute_activity" : [
+						"Specialist Packager",
+						"Something else"
+					],
+					"current_assigned_to" : "Nelson Menetti", 
+					"assigned_to" : [
+						"Nelson Menetti",
+						"Someone else"					
+					],
+					"activity_report" : "Some activity report",
+					"messages" : [
+						{
+							"from" : "Nelson Menetti",
+							"sent_on" : "11/11/2015",
+							"message" : "Do your thing",
+							"attached_filename" : "some_file.ppt",
+							"attached_filepath" : "attachments/some_file.ppt"
+						},
+						
+						{
+							"from" : "Frodo Baggins",
+							"sent_on" : "11/11/2015",
+							"message" : "Here is another text",
+							"attached_filename" : "another_file.ppt",
+							"attached_filepath" : "attachments/another_file.ppt"
+						}
+					],
+					
+					"virtual_signature" : {
+						"value" : "Signed",
+						"unsigned" : false
+					}
+				},
+				{
+					"id" : "3",
+					"name" : "Activity id 2 name from step id 1",
+					"description" : "Activity id 2 description from step id 1",
+					"current_status" : "current",
+					"current_status_icon" : "arrow-right",
+					"current_department" : "Department A",
+					"department" : [
+						"Department A",
+						"Department B",
+						"Department C"
+					],
+					"current_cost_center" : "Cost Center A", 
+					"cost_center" : [
+						"Cost Center A",
+						"Cost Center B",
+						"Cost Center C"
+					],
+					"status" : "Ongoing - on track",
+					"current_SLA" : "1 day",
+					"SLA" : [
+						"1 day",
+						"2 days",
+						"3 days"
+					],
+					"current_role_to_execute_activity" : "Specialist Packager", 
+					"role_to_execute_activity" : [
+						"Specialist Packager",
+						"Something else"
+					],
+					"current_assigned_to" : "Nelson Menetti", 
+					"assigned_to" : [
+						"Nelson Menetti",
+						"Someone else"					
+					],
+					"activity_report" : "Some activity report",
+					"messages" : [
+						{
+							"from" : "Nelson Menetti",
+							"sent_on" : "11/11/2015",
+							"message" : "Do your thing",
+							"attached_filename" : "some_file.ppt",
+							"attached_filepath" : "attachments/some_file.ppt"
+						},
+						
+						{
+							"from" : "Frodo Baggins",
+							"sent_on" : "11/11/2015",
+							"message" : "Here is another text",
+							"attached_filename" : "another_file.ppt",
+							"attached_filepath" : "attachments/another_file.ppt"
+						}
+					],
+					
+					"virtual_signature" : {
+						"value" : "Signed",
+						"unsigned" : false
+					}
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,36 @@
+<aside class="col-sidebar-left collapse navbar-collapse">
+	<div class="sidebar-wrapper collapse" id="sidebar">
+		<div class="user-account">
+			<div class="user-picture">
+				<div class="picture-wrapper">
+					<img src="img/content/user-pic.jpg" />
+				</div>
+			</div>
+			<div class="user-info-short">
+				<small>Welcome</small>
+				<a class="user-name" href="">Barack Hussein Obama</a>
+				<a href="" class="logout">not you?</a>
+			</div>
+		</div>
+		<ul class="list-group level-1">
+			<li ng-repeat="(key, page) in sidebarLinks" class="list-group-item {{page.subLinks ? 'has-submenu' : ''}}">
+				<a class="{{page.subLinks ? 'collapsed' : ''}}" ng-click="$event.preventDefault()" type="button" data-toggle="collapse" href="#{{key}}" aria-expanded="false" aria-controls="{{key}}">
+					<span class="glyphicon glyphicon-{{page.icon}}" aria-hidden="true"></span>								 
+					{{page.name}}
+				</a>
+				<div class="collapse" id="{{key}}" ng-if="page.subLinks">
+					<ul class="list-group">
+						<li class="list-group-item" ng-repeat="(subKey, subPage) in page.subLinks">
+							<a href="#/{{language + subPage.url}}" class="{{subPage.url === '#'+currentPage ? 'active' : ''}}">
+								{{subPage.name}}
+								<span class="counter" ng-repeat="amount in amounts" ng-if="amount.name === key && amount.filters[sidebarLinks[key].subLinks[subKey].filter] > 0">
+									{{amount.filters[sidebarLinks[key].subLinks[subKey].filter]}}
+								</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+	</div>
+</aside> 

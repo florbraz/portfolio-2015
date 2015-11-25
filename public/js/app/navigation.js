@@ -20,7 +20,7 @@ define(["app/main"], function(main) {
             
         },
         ShowOnScroll: function() {
-            if (App.Utils.IsOnPage('.banner')) {
+            if (App.Utils.IsOnPage('.banner h1')) {
                 $('header').removeClass('fixed-header');
             }
             else {

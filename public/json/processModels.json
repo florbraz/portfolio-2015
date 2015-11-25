@@ -1,0 +1,37 @@
+[
+	{
+		"id" : "1",
+		"department" : "Department A",
+		"current_process_name" : "Buy stuff",
+		"process_name" : [
+			"Buy stuff",
+			"Sell enriched uranium"
+		],
+		"versions" : {
+			"available" : true,
+			"current" : "1.0",
+			"values" : [
+				"1.0",
+				"2.0"
+			]	
+		}
+	},
+	
+	{
+		"id" : "1",
+		"department" : "Department A",
+		"current_process_name" : "Buy stuff",
+		"process_name" : [
+			"Buy stuff",
+			"Sell enriched uranium"
+		],
+		"versions" : {
+			"available" : true,
+			"current" : "1.0",
+			"values" : [
+				"1.0",
+				"2.0"
+			]	
+		}
+	}
+]

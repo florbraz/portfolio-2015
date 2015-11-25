@@ -1,0 +1,7 @@
+<div class="filter">
+	<ul>
+		<li ng-repeat="link in filterLinks" ng-if="link.isFilter">
+			<a href="{{link.url}}" class="filter-button filter-button-{{link.filter}} {{link.url === '#'+currentPage ? 'active' : ''}}">{{link.name}}</a>
+		</li>
+	</ul>
+</div>

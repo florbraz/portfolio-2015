@@ -18,7 +18,7 @@
   height:200px;
   width:100%;
   display:table;
-  background:#dfdfdf;
+  background:#E4E7EA;
   .thumb-inner {
     vertical-align: middle;
     text-align: center;
@@ -32,17 +32,17 @@
 
 .section-title {
   line-height: 1;
-  font-size:26px;
+  font-size:36px;
   text-align: center;
   font-family: $f-bold;
-  color:#8283A2;
+  color:#3D3E4E;
   span {
     display:inline-block;
     padding:0 20px;
   }
   & + .section-small {
     margin-top:-14px;
-    margin-bottom: 21px;
+    margin-bottom: 32px;
   }
 }
 
@@ -76,9 +76,6 @@
     border: 20px solid #fff;
     margin-top:10%;
     transition: all 1s;
-  }
-  a {
-      display:block;
   }
   img {
     margin:0 auto;
