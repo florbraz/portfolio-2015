@@ -207,7 +207,7 @@ $button-color: $main-highlight;
     }
     h3 {
         text-align: center;
-        font-size:1.3em;
+        font-size:1.5em;
         line-height:1.2;
         font-family:$f-regular;
         height: 2.5em;
@@ -280,3 +280,9 @@ $button-color: $main-highlight;
         display:block;
     }
 }
+
+// @media #{$DesktopLarge} {
+//     .skill-set h3 {
+//         height:auto;
+//     }
+// }
